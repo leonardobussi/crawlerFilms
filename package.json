@@ -1,0 +1,24 @@
+{
+  "name": "crawlerfilms",
+  "version": "1.0.0",
+  "description": "script crawler com nodejs para alimentar uma pagina estatica",
+  "main": "spider.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardobussi/crawlerFilms.git"
+  },
+  "author": "leonardobussi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leonardobussi/crawlerFilms/issues"
+  },
+  "homepage": "https://github.com/leonardobussi/crawlerFilms#readme"
+}
