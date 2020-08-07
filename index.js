@@ -3,7 +3,7 @@ const request = require('request')
 const cheerio = require('cheerio')
 const bp = require('body-parser');
 
-const fs = require('fs')
+//const fs = require('fs')
 
 const app = express();
 app.use(bp.json());
@@ -57,27 +57,4 @@ app.listen(3000, (err) => {
     }
 });
 
-module.exports = app;
-
-
-request('http://www.imdb.com/chart/moviemeter', function(err, res, body){
-
-    if(err){
-        console.log('Erro:'+err)
-    }
-
-    var $ = cheerio.load(body)
-
-    $('.lister-list tr').each(function(){
-        const title = $(this).find('.titleColumn a').text().trim()
-        const rating = $(this).find('.imdbRating strong').text().trim()
-
-        const dados = {title, rating}
-
-
-        return dados
-    })
-})
-
-
-
+//module.exports = app;
