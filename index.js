@@ -1,19 +1,75 @@
 const express  = require('express');
-const Spyder = require('./Spyder') 
+const request = require('request')
+const cheerio = require('cheerio')
+const fs = require('fs')
 
 const app = express();
 
 app.set('view engine', 'ejs');
-//app.use(expressLayouts);
+
 app.set('views', 'views');
 
-app.listen(2999, (err) => {
+request('http://www.imdb.com/chart/moviemeter', function(err, res, body){
+
+    if(err){
+        console.log('Erro:'+err)
+    }
+
+    var $ = cheerio.load(body)
+
+    $('.lister-list tr').each(function(){
+        const title = $(this).find('.titleColumn a').text().trim()
+        const rating = $(this).find('.imdbRating strong').text().trim()
+
+        const dados = {title, rating}
+
+        fs.appendFile('dados.json', dados ,function(err){
+            if(err){
+               console.error(err)
+            }
+        });
+
+        console.log(dados)
+
+        app.get('/', function(req, res){
+            return res.render('index',{dados: dados}); 
+        })
+
+
+    })
+})
+
+
+
+app.listen(3000, (err) => {
     if(err) {
         console.log('==> [-]  falha na aplicação');
     } else {
         console.log('==> [+] aplicação funcionando ');
-        console.log(Spyder)
     }
 });
 
 module.exports = app;
+
+
+request('http://www.imdb.com/chart/moviemeter', function(err, res, body){
+
+    if(err){
+        console.log('Erro:'+err)
+    }
+
+    var $ = cheerio.load(body)
+
+    $('.lister-list tr').each(function(){
+        const title = $(this).find('.titleColumn a').text().trim()
+        const rating = $(this).find('.imdbRating strong').text().trim()
+
+        const dados = {title, rating}
+
+
+        return dados
+    })
+})
+
+
+

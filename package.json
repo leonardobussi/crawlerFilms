@@ -13,7 +13,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "roda": "nodemon teste.js"
+    "roda": "nodemon index.js"
   },
   "repository": {
     "type": "git",

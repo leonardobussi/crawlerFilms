@@ -6,11 +6,12 @@
     <title>spider maneiro</title>
 </head>
 <body>
-    <% if (dados.title.length < 1) { %>
+
+    <% if (dados.length < 1) { %>
         <ul>
-        <% for(var i = 0; dados.title.length > i; i++ ) { %>
+        <% for(var i = 0; dados.length > i; i++ ) { %>
         
-            <li> <%= dados.title %> </li>
+            <li style="color: black;"> <%= dados %> </li>
 
         <% } %>
         </ul>
