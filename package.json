@@ -5,11 +5,15 @@
   "main": "spider.js",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
     "request": "^2.88.2"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "roda": "nodemon teste.js"
   },
   "repository": {
     "type": "git",
