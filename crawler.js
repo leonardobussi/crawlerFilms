@@ -42,7 +42,6 @@ Crawler.init();
 app.listen(3000, (err) => {
     if(err) {
         console.log('==> [-]  falha na aplicação');
-        dadosNow()
     } else {
         console.log('==> [+] aplicação funcionando ');
     }
