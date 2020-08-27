@@ -26,6 +26,9 @@ var Crawler = {
 				var title  = $(this).find('.titleColumn a').text().trim();
 				var rating = $(this).find('.imdbRating strong').text().trim();
 				//Crawler.fs.appendFile('imdb.txt', title + ' - ' + rating + '\n');
+				if(rating == ''){
+					rating = "sem avaliação"
+				}
 				var response = {title, rating}
 				dados.push(response)
 				
@@ -35,11 +38,10 @@ var Crawler = {
 			for(let i = 0; i < 40 ; i++) {  
 				dadosNow1.push(dados[i])
 			}
-			console.log('dados 21', dadosNow1)
 			for(let i = 40; i < dados.length ; i++) {  
 				dadosNow2.push(dados[i])
 			}
-			console.log('dados 2', dadosNow2)
+		
 
 			app.get('/', function(req, res){ 
 				return res.render('index', {dados: dadosNow1})
