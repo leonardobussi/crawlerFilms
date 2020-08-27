@@ -11,12 +11,19 @@
   <div class="container">
 
     <div class="box">
-        <% dados.forEach(i => {  %>
+        <!-- <% dados.forEach(i => {  %>
             <div class="card">
               <h3> <%= i.title %></h3> 
               <p> <%= i.rating %> </p>
             </div>
-        <%}) %>
+        <%}) %> -->
+         <% for(let i = 0; i < 10 ; i++) {  %>
+            <div class="card">
+              <h3> <%= dados[i].title %></h3> 
+              <p> <%= dados[i].rating %> </p>
+            </div>
+        <%} %>
+
     </div>
   </div>
 

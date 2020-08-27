@@ -5,7 +5,10 @@
     outline: none;
 }
 body{
-    background-color: #eee;
+    background-image: url(../img/1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 .container {
     display: flex;
