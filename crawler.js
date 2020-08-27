@@ -4,6 +4,8 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
+app.use(express.static('public'))
+
 var Crawler = {
 	request : null,
 	cheerio : null,
@@ -46,5 +48,3 @@ app.listen(3000, (err) => {
         console.log('==> [+] aplicação funcionando ');
     }
 });
-
-//module.exports = Crawler;
