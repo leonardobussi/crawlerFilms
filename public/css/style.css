@@ -28,3 +28,20 @@ body{
     box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.342)!important;
     color: white;
 }
+.card:hover {
+    box-shadow: 0px 0rem 0.5rem rgb(1, 5, 255)!important;
+}
+.vermais{
+    padding: 0 0 50px 0;
+}
+.vermais a{
+    padding: 10px 50px;
+    background-color: #e94d4d;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.vermais a:hover {
+    opacity: 0.6;
+}
