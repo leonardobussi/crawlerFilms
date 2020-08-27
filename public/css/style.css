@@ -10,6 +10,15 @@ body{
     background-position: center;
     background-attachment: fixed;
 }
+header{
+    padding: 0 0 0 10px;
+}
+header a {
+    color: #fff;
+}
+header a:hover {
+    opacity: 0.5;
+}
 .container {
     display: flex;
     justify-content: center;
