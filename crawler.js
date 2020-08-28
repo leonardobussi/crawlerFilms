@@ -17,7 +17,7 @@ var Crawler = {
 		Crawler.getMovies();
 
 	},
-	getMovies: function(dados = [], dadosNow1 = [], dadosNow2 = []){
+	getMovies: function(dados = []){
 		Crawler.request('http://www.imdb.com/chart/moviemeter', function(err, res, body){
 			if(err)
 				console.log('Error: ' + err);
@@ -33,23 +33,12 @@ var Crawler = {
 				dados.push(response)
 				
 			});
-			
-
-			for(let i = 0; i < 40 ; i++) {  
-				dadosNow1.push(dados[i])
-			}
-			for(let i = 40; i < dados.length ; i++) {  
-				dadosNow2.push(dados[i])
-			}
+		
 		
 
 			app.get('/', function(req, res){ 
-				return res.render('index', {dados: dadosNow1})
+				return res.render('index', {dados: dados})
 			}) 
-			app.get('/mais', function(req, res){
-				return res.render('mais', {dados: dadosNow2})
-			})
-
 		});
 	}
 };
